@@ -7,7 +7,7 @@ app = flask.Flask(__name__)
 
 # Load the trained CatBoost model
 model = CatBoostClassifier()
-model.load_model("Diabetes_Prediction/Model/diabetes_model.cbm")
+model.load_model("Model/diabetes_model.cbm")
 
 @app.route('/')
 def home():
