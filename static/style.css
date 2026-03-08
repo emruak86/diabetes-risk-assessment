@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a2a3a, #2a4a6a);
+    color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+}
+
+form {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+form:hover {
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 2em;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+    color: rgba(236, 240, 241, 0.7);
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 0.9em;
+    color: rgba(236, 240, 241, 0.8);
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    color: #ecf0f1;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+/*Style for select dropdowns*/
+select:required:invalid {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/*Style dropdown options for better visibility*/
+select option {
+    background: #1a2a3a;
+    color: #ecf0f1;
+}
+
+/* Placeholder color */
+input::placeholder {
+    color: rgba(166, 194, 201, 0.5);
+}
+
+/* Focus styles */
+input:focus, select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Custom arrow for select */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 30px; /* space for arrow */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ECF0F1%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%;
+    background-size: 10px auto;
+}
+
+
+button {
+    background: linear-gradient(to right, #3498db, #2980b9);
+    color: white;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background: linear-gradient(to right, #2980b9, #3498db);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.4);
+}
+
+.info-icon {
+    display: inline-block;
+    margin-left: 5px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.info-icon .tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 150%; /* Position above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2c3e50;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 12px;
+    white-space: normal; /* Allow text to wrap */
+    z-index: 10;
+    transition: opacity 0.3s, visibility 0.3s;
+    width: 250px; /* Set a width */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Tooltip arrow */
+.info-icon .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #2c3e50 transparent transparent transparent;
+}
+
+.info-icon:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+#result-container {
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: none ;
+    transition: all 0.5s ease;
+}
+
+#result-container.result-display {
+    display: block;
+}
+
+#result-container h2 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #ffffff;
+}
+
+#result-container p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.risk-percentage span {
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.risk-level strong {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Risk level specific styles for color-coding */
+.low-risk {
+    background: rgba(46, 204, 113, 0.2); /* Greenish */
+    border-color: rgba(46, 204, 113, 0.5);
+}
+.low-risk .risk-percentage span, .low-risk .risk-level strong {
+    color: #2ecc71;
+}
+
+.moderate-risk {
+    background: rgba(241, 196, 15, 0.2); /* Yellowish */
+    border-color: rgba(241, 196, 15, 0.5);
+}
+.moderate-risk .risk-percentage span, .moderate-risk .risk-level strong {
+    color: #f1c40f;
+}
+
+.high-risk {
+    background: rgba(230, 126, 34, 0.2); /* Orangish */
+    border-color: rgba(230, 126, 34, 0.5);
+}
+.high-risk .risk-percentage span, .high-risk .risk-level strong {
+    color: #e67e22;
+}
+
+.very-high-risk {
+    background: rgba(231, 76, 60, 0.2); /* Reddish */
+    border-color: rgba(231, 76, 60, 0.5);
+}
+.very-high-risk .risk-percentage span, .very-high-risk .risk-level strong {
+    color: #e74c3c;
+}
+
+/* Loading and Error states */
+.loading, .error {
+    font-style: italic;
+    color: rgba(236, 240, 241, 0.7);
+}
+
+.error {
+    color: #e74c3c;
+    font-weight: 500;
+}

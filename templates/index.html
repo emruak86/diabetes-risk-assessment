@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Diabetes Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel = "preconnect" href = "https://fonts.googleapis.com">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
+    <link href = "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel = "stylesheet">
+</head>
+<body>
+    <div class="container">
+        <form id="prediction-form">
+            <h1>Diabetes Risk Assessment</h1>
+            <h3>Input your Health Parameters</h3>
+            <div class="form-group">
+            <label for="gender">Gender: </label>
+            <select id="gender" name="gender" required>
+                <option value ="" disabled selected>Select your gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            </div>
+            
+            <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" placeholder = "e.g. 45" required>
+            </div>
+
+            <div class="form-group">
+            <label for="hypertension">Hypertension:</label>
+            <select id="hypertension" name="hypertension" required>
+                <option value = "" disabled selected>Do you have hypertension?</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            </div>
+
+            <div class="form-group">
+            <label for="heart_disease">Heart Disease:</label>
+            <select id="heart_disease" name="heart_disease" required>
+                <option value = "" disabled selected>Do you have heart disease?</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            </div>
+
+            <div class="form-group">
+            <label for="smoking_history">Smoking History: <span class = "info-icon"> ⓘ 
+                <span class="tooltip">
+                    <br>Never - The individual has never smoked.
+                    <br>Current - The individual currently smokes.
+                    <br>Former - The individual used to smoke regularly but has quit.
+                    <br>Ever - The individual has smoked at least once at some point in their life.
+                    <br>Not Current - The individual has smoked in the past but does not currently smoke.
+                    <br>No Info - Smoking history unkown.
+                    <br>Please select the option that best describes your smoking history.
+                    <br>Note: This information is crucial for an accurate diabetes risk assessment.
+                </span>
+                </span>
+            </label>
+            <select id="smoking_history" name="smoking_history" required>
+                <option value="" disabled selected>Select your smoking history</option>
+                <option value="never">Never</option>
+                <option value="current">Current</option>
+                <option value="former">Former</option>
+                <option value="ever">Ever</option>
+                <option value="not current">Not Current</option>
+                <option value="No Info">No Info</option>
+            </select>
+            </div>
+            
+            <div class="form-group">
+            <label for="bmi">Body Mass Index (BMI):</label>
+            <input type="number" step="0.1" id="bmi" name="bmi" placeholder = "e.g. 24.5" required>
+            </div>
+
+            <div class="form-group">
+            <label for="hba1c">HbA1c Level:</label>
+            <input type="number" step="0.01" id="hba1c" name="hba1c" placeholder = "e.g. 5.7" required>
+            </div>
+
+            <div class="form-group">
+            <label for="blood_glucose_level">Blood Glucose Level(mg/dL):</label>
+            <input type="number" id="blood_glucose_level" name="blood_glucose_level" placeholder = "e.g. 100" required>
+            </div>
+
+            <button type="submit">Predict</button>
+            </form>
+            <div id="result-container"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
