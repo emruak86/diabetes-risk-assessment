@@ -66,39 +66,41 @@ python app.py
 - ≥ 80% → Very High Risk
 
 ### Project Structure
+
+```
 Diabetes_Prediction/
 │
 ├── Data/
 │   └── diabetes_prediction_dataset.csv
 ├── docs/
-|   └── ui_form.png
-|   └── prediction_result.png
-|
+│   ├── ui_form.png
+│   └── prediction_result.png
+│
 ├── Evaluation/
 │   ├── classification_report.txt
 │   ├── confusion_matrix.png
 │   └── metrics.json
-|
+│
 ├── Model/
 │   ├── diabetes_model.cbm
 │   └── feature_columns.json
 │
 ├── static/
-|   └── style.css
-|   └── script.js
-|
+│   ├── style.css
+│   └── script.js
+│
 ├── templates/
 │   └── index.html
-|
+│
 ├── Training/
-|   └── CatBoost_Model_Training.py
+│   └── CatBoost_Model_Training.py
 │
 ├── app.py
 ├── CONTRIBUTING.md
 ├── LICENSE
 ├── README.md
 └── requirements.txt
- 
+```
 ### Quick Start
 0. Prerequisites
    - Python 3.9+ and pip installed
