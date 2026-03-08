@@ -1,0 +1,60 @@
+# Python bytecode/cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment files and secrets
+.env
+.env.*
+*.env
+
+# Kaggle credentials (do not commit)
+kaggle.json
+.kaggle/
+
+# OS/Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build/distribution artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Testing/coverage/lint caches
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.mypy_cache/
+.pyre/
+.pytype/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+logs/
+
+# Data files (download via Kaggle CLI; keep the folder but ignore contents)
+Data/*
+!Data/.gitkeep
+
+# Model artifacts and training logs
+Model/*.cbm
+catboost_info/
+
