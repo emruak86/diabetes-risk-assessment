@@ -1,0 +1,13 @@
+Model Evaluation Report
+=======================
+
+Model Accuracy: 0.9680
+Model AUC: 0.9798
+              precision    recall  f1-score   support
+
+           0       0.98      0.99      0.98     18300
+           1       0.86      0.75      0.80      1700
+
+    accuracy                           0.97     20000
+   macro avg       0.92      0.87      0.89     20000
+weighted avg       0.97      0.97      0.97     20000
